@@ -1,0 +1,37 @@
+body{
+    background-color: #E3F2FD;
+    font-family: 'Lucida Calligraphy';
+}
+.container{
+    width: 30%;
+    background-color: #64B5F6;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    border: none;
+    border-radius: 20px;
+}
+.container input{
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    width: 200px;
+}
+.container button{
+    margin-top: 30px;
+    height: 30px;
+    width: 130px;
+    font-weight: bold;
+    font-family: 'Lucida Calligraphy';
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: white;
+    background-color: #1976D2;
+}
+.container button:hover{
+    cursor: pointer;
+    color: #1976D2;
+    background-color: white;
+}

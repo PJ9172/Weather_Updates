@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Updates</title>
+    <link rel="stylesheet" href="/static/result.css">
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <h1 align="center">Weather Updates</h1>
+            <p id="name">sfsfsdf</p>
+            <p id="temp">sdfsdf</p>
+            <p id="humd">sdfsf</p>
+            <p id="speed">sdfsd</p>
+            <p id="desc">sfsfsfs</p>
+        </div>
+    </center>
+</body>
+<script>
+    var nam = document.getElementById("name")
+    var temp = document.getElementById("temp")
+    var humd = document.getElementById("humd")
+    var speed = document.getElementById("speed")
+    var desc = document.getElementById("desc")
+
+    var jsonData = {{.}}
+    nam.innerText = `Name = ${jsonData.name}`
+    temp.innerText = `Temperature = ${jsonData.main.temp}`
+    humd.innerText = `Humidity = ${jsonData.main.humidity}`
+    speed.innerText = `Wind_Speed = ${jsonData.wind.speed}`
+    desc.innerText = `Description = ${jsonData.weather[0].description}`
+</script>
+
+</html>

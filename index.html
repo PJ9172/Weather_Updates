@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Updates</title>
+    <link rel="stylesheet" href="./static/index.css">
+</head>
+
+<body>
+    <center>
+        <div class="container">
+            <h1>Enter City<br>Name</h1>
+            <input type="text" id="city"><br>
+            <button onclick="findweather()">Submit</button>
+        </div>
+    </center>
+</body>
+<script>
+    function findweather() {
+        var city = document.getElementById("city").value;
+        if (city == "") {
+            alert("Enter valid City!!!")
+            return
+        }
+        window.location.href = `http://localhost:3000/weather?city=${city}`
+    }
+</script>
+
+</html>
