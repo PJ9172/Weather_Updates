@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather Finder</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* font-family: 'Segoe UI', sans-serif; */
+      font-family: 'Lucida Calligraphy';
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      color: #ffffff;
+      width: 320px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 12px 15px;
+      border-radius: 10px;
+      border: none;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 16px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-family: 'Lucida Calligraphy';
+      
+    }
+
+    input::placeholder {
+      color: #dddddd;
+    }
+
+    button {
+      padding: 12px 25px;
+      background-color: #ffffff;
+      color: #2a5298;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      font-family: 'Lucida Calligraphy';
+    }
+
+    button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .preview-label {
+      margin-top: 30px;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    .previews {
+      margin-top: 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 30px;
+    }
+
+    .icon {
+      animation: float 3s ease-in-out infinite;
+      display: inline-block;
+    }
+
+    .icon.sun { color: #FFD700; animation-delay: 0s; }
+    .icon.cloud { color: #ffffff; animation-delay: 0.2s; }
+    .icon.rain { color: #a9c9ff; animation-delay: 0.4s; }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 400px) {
+      .container { width: 90%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Weather App</h1>
+    <input type="text" id="city" placeholder="Enter city name">
+    <button onclick="findweather()">Check Weather</button>
+
+    <div class="preview-label">See weather preview:</div>
+    <div class="previews">
+      <div class="icon sun">☀️</div>
+      <div class="icon cloud">☁️</div>
+      <div class="icon rain">💧</div>
+    </div>
+  </div>
+
+  <script>
+    function findweather() {
+      const city = document.getElementById("city").value.trim();
+      if (city === "") {
+        alert("Please enter a city name!");
+        return;
+      }
+      window.location.href = `http://localhost:3000/weather?city=${city}`;
+    }
+  </script>
+</body>
+</html>

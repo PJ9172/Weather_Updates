@@ -1,18 +1,61 @@
-body{
-    background-color: #E3F2FD;
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* font-family: Arial, sans-serif; */
     font-family: 'Lucida Calligraphy';
+    overflow: hidden;
 }
-.container{
-    width: 30%;
-    background-color: #64B5F6;
-    margin-top: 100px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    border: none;
+
+#weather-bg {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 1s ease-in-out;
+}
+
+/* Default Background */
+.default {
+    background: #cfd9df;
+}
+
+/* Sunny Animation */
+.sunny {
+    background: linear-gradient(to top, #ffbd2f, #d1fdff);
+    animation: sunPulse 4s infinite;
+}
+
+@keyframes sunPulse {
+    0%, 100% { background-color: #ffd06b; }
+    50% { background-color: #ffde4b; }
+}
+
+/* Rainy Animation */
+.rainy {
+    background: linear-gradient(#4b6580, #49abec);
+    background-size: cover;
+    /* animation: rainFall 2s linear infinite; */
+}
+
+@keyframes rainFall {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100px; }
+}
+
+/* Cloudy */
+.cloudy {
+    background: linear-gradient(to bottom, #bdc3c7, #2c3e50);
+}
+
+/* Info box style */
+.info-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
     border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: #fff;
     text-align: center;
-}
-.container p{
-    /* margin-left: 100px; */
-    font-size: 18px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }

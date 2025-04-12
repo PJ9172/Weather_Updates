@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Results</title>
+    <link rel="stylesheet" href="/static/result.css">
+</head>
+<body>
+    <div id="weather-bg">
+        <div class="info-box" id="info-box">
+            <h1>Weather in <span id="name"></span></h1>
+            <p id="temp"></p>
+            <p id="humd"></p>
+            <p id="speed"></p>
+            <p id="desc"></p>
+        </div>
+    </div>
+
+    <script>
+        const jsonData = {{.}};
+
+        document.getElementById("name").innerText = jsonData.name;
+        document.getElementById("temp").innerText = `Temperature: ${jsonData.main.temp} °C`;
+        document.getElementById("humd").innerText = `Humidity: ${jsonData.main.humidity}%`;
+        document.getElementById("speed").innerText = `Wind Speed: ${jsonData.wind.speed} m/s`;
+        document.getElementById("desc").innerText = `Condition: ${jsonData.weather[0].description}`;
+
+        // Animate background based on weather
+        const weatherMain = jsonData.weather[0].main.toLowerCase();
+        const bg = document.getElementById("weather-bg");
+        const info_box = document.getElementById("info-box");
+
+        if (weatherMain.includes("rain")) {
+            bg.classList.add("rainy");
+        } else if (weatherMain.includes("cloud")) {
+            bg.classList.add("cloudy");
+        } else if (weatherMain.includes("clear")) {
+            bg.classList.add("sunny");
+            info_box.style.color='black';
+        } else {
+            bg.classList.add("default");
+        }
+    </script>
+</body>
+</html>
