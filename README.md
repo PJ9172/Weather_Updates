@@ -46,4 +46,6 @@ This project is a Weather information provider web application where users can e
 
 - User Info Page : 
 
-   ![user_info](screenshots/resultPage.png)
+   ![user_info](screenshots/resultPage1.png)
+
+   ![user_info](screenshots/resultPage2.png)
